@@ -1,6 +1,41 @@
 let mongoose = require("mongoose");
-let Shcema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
-let workoutSchema = new Schema({
+
+
+//   schema for exercise, an array of objects
+const exercisesSchema = new Schema({
+    type: {
+        type: String
+      },
     
-})
+      name: {
+        type: String
+      },
+    
+      duration: {
+        type: Number
+      },
+    
+      weight: {
+        type: Number
+      },
+    
+      reps: {
+        type: Number
+      },
+
+      sets: {
+        type: Number
+      },
+
+      distance: {
+        type: Number
+      }
+    
+});
+  
+  const exercises = mongoose.model("exercises", exercisesSchema);
+  
+  module.exports = exercises;
+  

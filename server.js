@@ -15,6 +15,15 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populate", { useNewUrlParser: true });
 
+
+db.workout.create({ name: "workout" })
+  .then(dbworkout => {
+    console.log(dbworkout);
+  })
+  .catch(({message}) => {
+    console.log(message);
+  });
+
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
   });

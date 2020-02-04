@@ -1,8 +1,8 @@
 let db = require("../models");
 
 module.exports = function(app) {
-    app.get("/api/stats", function(req, res){
-        db.index.findAll({}).then(function(dbIndex){
+    app.get("/api/exercise", function(req, res){
+        db..findAll({}).then(function(dbIndex){
             res.json(dbIndex);
         })
     })
